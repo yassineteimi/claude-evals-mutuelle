@@ -1,0 +1,81 @@
+site_name: "claude-evals-mutuelle: Claude on French insurance complaints"
+site_author: Yassine TEIMI
+site_description: >-
+  An evaluation-led pre-sales engagement for a fictional French mutual insurer:
+  success criteria first, a labelled French eval set, and a cost per 1,000
+  complaints for each Claude model under test.
+site_url: https://yassineteimi.github.io/claude-evals-mutuelle/
+
+repo_name: yassineteimi/claude-evals-mutuelle
+repo_url: https://github.com/yassineteimi/claude-evals-mutuelle
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: slate
+      toggle: { icon: material/toggle-switch, name: Switch to light mode }
+      primary: teal
+      accent: lime
+    - scheme: default
+      toggle: { icon: material/toggle-switch-off-outline, name: Switch to dark mode }
+      primary: teal
+      accent: purple
+
+extra_css:
+  - stylesheets/terminal.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/yassineteimi
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/yassine-teimi
+
+markdown_extensions:
+  - pymdownx.highlight: { anchor_linenums: true }
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.mark
+  - pymdownx.tabbed: { alternate_style: true }
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Prerequisites: prerequisites.md
+  - Architecture: architecture.md
+  - Phases:
+      - "Phase 0: triage": phases/phase-0-triage.md
+  - Evaluation: evaluation.md
+  - Findings: findings.md
+  - What is simulated: simulated.md
+  - Decisions: adr/README.md
+
+not_in_nav: |
+  /adr/0000-template.md
+
+copyright: |
+  &copy; 2026 <a href="https://github.com/yassineteimi" target="_blank" rel="noopener">Yassine TEIMI</a>
