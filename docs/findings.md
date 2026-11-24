@@ -79,6 +79,13 @@ Source: [Define success criteria and build evaluations](https://platform.claude.
 
 The guide asks for success criteria that are specific, measurable, achievable and relevant, usually across several dimensions (task fidelity, consistency, privacy, latency, price). For the evals themselves it gives three principles: mirror the real task distribution including edge cases, automate grading where possible, and prefer more cases with automated grading over fewer hand-graded ones. It also advises grading with a different model from the one that produced the output. This repo uses that vocabulary: success criteria, eval set, code-graded and model-graded.
 
+## Docs site toolchain
+
+Sources: [PyPI](https://pypi.org/) pages for each package, checked on 24 November 2026, and the notice mkdocs-material prints on every build.
+
+- Pinned: mkdocs 1.6.1, mkdocs-material 9.8.2, pymdown-extensions 13.1.2, Markdown 3.11.3, with every transitive dependency pinned in `requirements-docs.txt`. The last three need Python 3.11 or later; the Pages workflow uses 3.14.
+- mkdocs-material 9.8.2 announces on every build that Material for MkDocs reaches end of life on 5 May 2027, with Zensical named as its successor. That date falls after this engagement ends, so the site stays on Material, the same as the author's other project sites. A longer-lived site would need to move.
+
 ## Phase 0 cost estimate
 
 Before `make estimate` exists, this is the planning number. It assumes about 1,500 input tokens per case (instructions, the format system prompt and a French complaint, new tokenizer) and prices output at the full `max_tokens` ceiling, synchronous, no cache.
@@ -89,7 +96,7 @@ Before `make estimate` exists, this is the planning number. It assumes about 1,5
 | 512 | $0.012 | $0.24 | $0.26 |
 | 1,024 | $0.020 | $0.40 | $0.42 |
 
-Sonnet is about 95% of the cost at every setting. Even a full rerun at 1,024 stays under $1 against the $2 phase 0 budget. `make estimate` replaces these figures with counted input tokens before the baseline runs.
+The triage configuration sets `max_tokens` to 256 for Haiku 5.5 (thinking disabled) and 512 for Sonnet 5.5 (thinking `between_tools`), both at effort `medium`. That makes the planning worst case about $0.008 plus $0.24, roughly $0.25 for both models. Sonnet is about 95% of the cost at every setting. Even a full rerun at 1,024 stays under $1 against the $2 phase 0 budget. `make estimate` replaces these figures with counted input tokens before the baseline runs.
 
 ## Gaps between the brief and the sources
 
@@ -100,3 +107,4 @@ Sonnet is about 95% of the cost at every setting. Even a full rerun at 1,024 sta
 | A tight `max_tokens` keeps triage cheap | Thinking is on by default and shares `max_tokens` with the answer; Sonnet 5.5 can't disable it | Thinking set per model in configuration and recorded with results |
 | Prompt caching on the fixed part from phase 1 | Prefixes under 512 tokens silently don't cache | Check cache read tokens on the first phase 1 run |
 | Structured output token overhead | Not published | Measure with token counting |
+| A docs toolchain that lasts | Material for MkDocs reaches end of life on 5 May 2027 | Kept for this engagement, noted on the prerequisites page |
