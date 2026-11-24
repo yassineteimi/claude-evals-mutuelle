@@ -29,6 +29,7 @@ Sources: [Prompt caching](https://platform.claude.com/docs/en/build-with-claude/
 Source: [anthropic on PyPI](https://pypi.org/project/anthropic/) (JSON API at `pypi.org/pypi/anthropic/json`).
 
 - Latest release: **2.13.0**. `requires_python >=3.10`; classifiers list Python 3.10 to 3.14. The machine this repo is built on runs Python 3.14.4.
+- The SDK exposes the API version it sends only as `anthropic._constants.ANTHROPIC_API_VERSION`, a private module. The app reads it from there to record the version in every results file, and a test pins it to `2026-10-21`, so an SDK upgrade that moves or changes it fails the test suite instead of silently changing what the results say.
 - From 2.0.0 the SDK sends API version `2026-10-21` ([migration guide](https://platform.claude.com/docs/en/api/migration-2026-10-21)). That version removes `temperature`, `top_p` and `top_k`: sending any of them returns a 400 on every model, even at the default value ([versioning](https://platform.claude.com/docs/en/api/versioning)). The triage request must not set them.
 
 ## Token counting
