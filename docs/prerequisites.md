@@ -6,7 +6,7 @@ What you need depends on what you want to do. Reading the site needs nothing. Bu
 |---|---|---|
 | Read the site and the repo | A browser | Works now |
 | Build this site locally | Python 3.11 or later (`mkdocs-material` 9.8.2 requires it), git | Works now, steps below |
-| Run the offline tests | Python 3.10 or later (the `anthropic` SDK 2.13.0 requires it), `make`. No API key: tests go through a stub client | Arrives with the phase 0 code |
+| Run the offline tests | Python 3.11 or later, `make`. No API key: tests go through a stub client | Arrives with the phase 0 code |
 | Run the paid baseline | The above, plus an Anthropic API key in a gitignored `.env` | Arrives with the phase 0 code. Each paid run is estimated first with `make estimate`, which counts tokens for free |
 
 The site is written and tested on macOS with zsh, so the commands use `python3`, never a bare `python`.

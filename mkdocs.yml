@@ -67,6 +67,8 @@ nav:
   - Home: index.md
   - Prerequisites: prerequisites.md
   - Architecture: architecture.md
+  - Engagement:
+      - Success criteria: engagement/01-success-criteria.md
   - Phases:
       - "Phase 0: triage": phases/phase-0-triage.md
   - Evaluation: evaluation.md
