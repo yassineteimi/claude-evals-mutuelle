@@ -34,6 +34,10 @@ theme:
 
 extra_css:
   - stylesheets/terminal.css
+  - stylesheets/diagram-expand.css
+
+extra_javascript:
+  - javascripts/diagram-expand.js
 
 extra:
   social:

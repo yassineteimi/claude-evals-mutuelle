@@ -1,0 +1,115 @@
+/* Expand button and enlarged view for Mermaid diagrams (see javascripts/diagram-expand.js).
+   Colours come from Material's palette variables, so both light and dark schemes work. */
+
+.diagram-expand {
+  position: relative;
+}
+
+.diagram-expand__open,
+.diagram-expand-overlay__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.12));
+  border-radius: 0.3rem;
+  background: var(--md-default-bg-color, #fff);
+  color: var(--md-default-fg-color--light, rgba(0, 0, 0, 0.54));
+  cursor: pointer;
+  transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.diagram-expand__open svg,
+.diagram-expand-overlay__close svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+.diagram-expand__open:hover,
+.diagram-expand__open:focus-visible,
+.diagram-expand-overlay__close:hover,
+.diagram-expand-overlay__close:focus-visible {
+  color: var(--md-accent-fg-color, #526cfe);
+  border-color: currentColor;
+}
+
+.diagram-expand__open:focus-visible,
+.diagram-expand-overlay__close:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color, #526cfe);
+  outline-offset: 2px;
+}
+
+.diagram-expand__open {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  z-index: 1;
+  opacity: 0;
+}
+
+.diagram-expand:hover .diagram-expand__open,
+.diagram-expand:focus-within .diagram-expand__open {
+  opacity: 1;
+}
+
+/* Touch screens have no hover: keep the button visible. */
+@media (hover: none) {
+  .diagram-expand__open {
+    opacity: 1;
+  }
+}
+
+.diagram-expand__placeholder {
+  margin: 1em 0;
+}
+
+html.diagram-expand--locked {
+  overflow: hidden;
+}
+
+.diagram-expand-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--md-default-bg-color, #fff);
+}
+
+.diagram-expand-overlay[hidden] {
+  display: none;
+}
+
+.diagram-expand-overlay__stage {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 24px;
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+}
+
+/* margin: auto centres the diagram when it fits and keeps it scrollable from
+   its top-left corner when it doesn't (plain flex centring would clip it). */
+.diagram-expand-overlay__sizer {
+  position: relative;
+  flex: none;
+  margin: auto;
+}
+
+.diagram-expand-overlay .diagram-expand__host--enlarged {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  transform-origin: 0 0;
+}
+
+.diagram-expand-overlay__close {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+}
