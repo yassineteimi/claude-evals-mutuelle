@@ -1,7 +1,7 @@
 # ADR 0001: Evals before prompt tuning, smallest model first
 
-Status: proposed
-Date: 2026-11-25. Phase: 0.
+Status: accepted
+Date: proposed 2026-11-25, accepted 2026-11-25. Phase: 0.
 
 ## Context
 
