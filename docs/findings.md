@@ -74,6 +74,20 @@ Sources: [Recommandation 2024-R-02 du 2 juillet 2024 sur le traitement des récl
 - **Acknowledgement:** in writing, within **10 working days** of the written complaint being sent. It isn't needed if the written answer arrives within those 10 days.
 - **Answer:** in writing, clear and argued, within the deadline the insurer committed to and in any case within **2 months** of the first written expression of dissatisfaction, unless a law sets a shorter deadline.
 
+## French rules quoted in the policy extracts
+
+Sources: [Légifrance](https://www.legifrance.gouv.fr/), checked on 25 November 2026; [securite-sociale.fr](https://www.securite-sociale.fr/home/dossiers/galerie-dossiers/tous-les-dossiers/la-resiliation-infra-annuelle-de.html) for the cancellation rule.
+
+The policy extracts in `data/policies/` are the fictional insurer's own terms, but three of them follow real French rules, so they were checked rather than written from memory:
+
+| Extract | Rule | Source |
+|---|---|---|
+| Article 10.2: cancel at any time after one year, effective one month after receipt | Résiliation infra-annuelle of a complementary health contract takes effect one month after the mutuelle receives notice | [Code de la mutualité, art. L221-10-2](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038767779) |
+| Article 8: cover can be suspended 30 days after the formal notice | For individual contracts, cover can only be suspended thirty days after the mise en demeure; the mutuelle may cancel ten days after that | [Code de la mutualité, art. L221-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006792324) |
+| Article 14: refer to the mediator within one year of the written complaint | The mediator can refuse a case brought more than one year after the written complaint to the professional | [Code de la consommation, art. L612-2](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032224802) |
+
+The complaint deadlines in article 13 come from ACPR 2024-R-02 (see above). The one-month answer from the data protection officer in article 15 matches GDPR Article 12(3).
+
 ## Evaluation method
 
 Source: [Define success criteria and build evaluations](https://platform.claude.com/docs/en/test-and-evaluate/develop-tests).
