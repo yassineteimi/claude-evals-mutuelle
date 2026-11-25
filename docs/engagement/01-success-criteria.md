@@ -1,7 +1,7 @@
 # Success criteria: phase 0, triage
 
 !!! note "Approved by Yassine on 2026-11-24. Nothing has been measured yet."
-    These targets and the labelling guide were agreed before any prompt work, so no result can bend them afterwards. Mutuelle Ardoise is fictional; the reasons given for each target are the ones a real customer service director would weigh.
+    These targets and the labelling guide were agreed before any prompt work, so no result can bend them afterwards. On 2026-11-25, during the label review and still before any run, two `high` triggers were added to the guide: an error the member says has happened before, and a personal data breach. Mutuelle Ardoise is fictional; the reasons given for each target are the ones a real customer service director would weigh.
 
 Phase 0 answers one narrow question: can Claude triage French complaints well enough that a customer service team could route on its output, with a person still reviewing each case? Reply drafting, deadline tracking and adversarial messages come in later phases and have their own criteria.
 
@@ -63,7 +63,8 @@ The labels on the 30 cases and the instructions given to the model follow the sa
     - the member needs something before imminent care (for example a prise en charge before an operation on Monday);
     - the message threatens to go to the mediator, the ACPR or court;
     - it mentions a deadline that has passed;
-    - it is a repeated reminder.
+    - it is a repeated reminder, or the member says the same error has happened before;
+    - the message reports a personal data breach: the member's data sent to, or seen by, the wrong person.
 - `normal`: a real issue with no immediate harm or deadline.
 - `low`: a request for information, a change request with no dissatisfaction (a new address, adding a child to the contract, new bank details), or a minor remark with no consequence for the member.
 
