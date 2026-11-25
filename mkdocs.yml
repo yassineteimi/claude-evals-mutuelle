@@ -72,13 +72,16 @@ nav:
   - Prerequisites: prerequisites.md
   - Architecture: architecture.md
   - Engagement:
+      - Discovery: engagement/00-discovery.md
       - Success criteria: engagement/01-success-criteria.md
   - Phases:
       - "Phase 0: triage": phases/phase-0-triage.md
   - Evaluation: evaluation.md
   - Findings: findings.md
   - What is simulated: simulated.md
-  - Decisions: adr/README.md
+  - Decisions:
+      - adr/README.md
+      - "0001: Evals before prompt tuning": adr/0001-evals-before-prompt-tuning.md
 
 not_in_nav: |
   /adr/0000-template.md

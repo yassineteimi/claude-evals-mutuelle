@@ -23,6 +23,8 @@ The customer's question has a yes or no answer, and a prompt tuned without a fix
 
 ## Pages
 
+- [Discovery](engagement/00-discovery.md): the customer, the decision they need to make, and the constraints that rule options out.
+- [Success criteria](engagement/01-success-criteria.md): the triage targets and the labelling guide, approved before any prompt work.
 - [Prerequisites](prerequisites.md): what you need to read, test, run or build this repo.
 - [Architecture](architecture.md): the phase 0 design and the target design it grows into.
 - [Phase 0: triage](phases/phase-0-triage.md): the triage contract, how a complaint is told apart from a request, and the request design.
